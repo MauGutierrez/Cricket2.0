@@ -59,3 +59,10 @@ class SemanticRules:
 		self.cube(["bool", ">=", "bool"])	= "bool"
 		self.cube(["bool", "==", "bool"])	= "bool"
 		self.cube(["bool", "!=", "bool"])	= "bool"
+
+	def checkResult(self, op1, operator, op2):
+		key = (op1, operator, op2)
+		if key in self.cube:
+			return self.cube[key]
+		else:
+			return "Error"
